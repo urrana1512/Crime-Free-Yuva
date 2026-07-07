@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  /* Default: Dark Theme */
+  --bg-base: #08090d;
+  --bg-surface: #0e1018;
+  --bg-card: #131720;
+  --bg-card-h: #191f2e;
+  --text-head: #eef0f8;
+  --text-body: #8e97b2;
+  --text-muted: #4a5070;
+  --red: #e02020;
+  --red-light: #f03030;
+  --red-glow: rgba(224, 32, 32, 0.22);
+  --gold: #f0a500;
+  --gold-light: #f5bc30;
+  --green: #22c55e;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-red: rgba(224, 32, 32, 0.35);
+  --shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  --nav-bg: rgba(8, 9, 13, 0.85);
+  --whatsapp-green: #25d366;
+}
+
+:root.light {
+  /* Light Theme */
+  --bg-base: #f2f0eb;
+  --bg-surface: #e8e5de;
+  --bg-card: #ffffff;
+  --bg-card-h: #fdfaf5;
+  --text-head: #0d0f14;
+  --text-body: #3c4260;
+  --text-muted: #8890a8;
+  --red: #c01818;
+  --red-light: #dc2626;
+  --red-glow: rgba(192, 24, 24, 0.1);
+  --gold: #c78800;
+  --gold-light: #e09a00;
+  --green: #16a34a;
+  --border: rgba(0, 0, 0, 0.07);
+  --border-red: rgba(192, 24, 24, 0.25);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(242, 240, 235, 0.9);
+  --whatsapp-green: #16a34a;
+}
+
+@theme {
+  --font-display: "Bebas Neue", cursive;
+  --font-ui: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-h: var(--bg-card-h);
+  --color-text-head: var(--text-head);
+  --color-text-body: var(--text-body);
+  --color-text-muted: var(--text-muted);
+  --color-accent-red: var(--red);
+  --color-accent-red-light: var(--red-light);
+  --color-accent-red-glow: var(--red-glow);
+  --color-accent-gold: var(--gold);
+  --color-accent-gold-light: var(--gold-light);
+  --color-accent-green: var(--green);
+  --color-border-custom: var(--border);
+  --color-border-red: var(--border-red);
+  --color-wa-green: var(--whatsapp-green);
+}
+
+/* Hide default cursor on desktop devices with cursor precision, EXCEPT text inputs and textareas */
+@media (hover: hover) and (pointer: fine) {
+  html, body, button, a, select, [role="button"], .hoverable {
+    cursor: none !important;
+  }
+  input, textarea {
+    cursor: text !important;
+  }
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-body);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Red Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--red);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-light);
+}
+
+/* Fixed background grid overlay */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+/* Section dividers using clip-path */
+.divider-diagonal-1 {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+
+.divider-diagonal-2 {
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Reveal transition utility classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Infinite Scrolling Testimonial Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 40s linear infinite reverse;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Floating Icon Animation */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-icon {
+  animation: floatIcon 3.5s ease-in-out infinite;
+}
+
+
