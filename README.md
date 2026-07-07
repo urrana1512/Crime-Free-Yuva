@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="public/logo_full.png" alt="Crime Free Yuva Logo" width="280" />
+  <img src="public/logo_dark.png" alt="Crime Free Yuva Logo" width="150" />
 </p>
 
 <p align="center">
