@@ -14,7 +14,7 @@
       }
       
       .title {
-        font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+        font-family: 'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif;
         font-size: 75px;
         fill: #eef0f8;
         letter-spacing: 4px;
@@ -65,23 +65,19 @@
         0% {
           opacity: 0;
           text-shadow: 0 0 0px rgba(224, 32, 32, 0);
-          transform: translateY(10px);
         }
         100% {
           opacity: 1;
           text-shadow: 0 0 20px rgba(224, 32, 32, 0.6);
-          transform: translateY(0);
         }
       }
       
       @keyframes fadeInUp {
         0% {
           opacity: 0;
-          transform: translateY(20px);
         }
         100% {
           opacity: 1;
-          transform: translateY(0);
         }
       }
       
