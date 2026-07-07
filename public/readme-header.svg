@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%">
+  <defs>
+    <!-- Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Syne:wght@700;800&amp;family=DM+Sans:wght@400;500&amp;display=swap');
+      
+      .bg-rect {
+        fill: #08090d;
+      }
+      
+      .grid-line {
+        stroke: rgba(255, 255, 255, 0.03);
+        stroke-width: 1;
+      }
+      
+      .title {
+        font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+        font-size: 75px;
+        fill: #eef0f8;
+        letter-spacing: 4px;
+        opacity: 0;
+        animation: fadeInGlow 2s ease-out forwards;
+      }
+      
+      .accent-text {
+        fill: #e02020;
+      }
+      
+      .subtitle {
+        font-family: 'Syne', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        fill: #f0a500;
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: fadeInUp 1.5s ease-out 0.8s forwards;
+      }
+      
+      .tagline {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+        fill: #8e97b2;
+        opacity: 0;
+        animation: fadeInUp 1.5s ease-out 1.6s forwards;
+      }
+      
+      .pulse-circle {
+        fill: #e02020;
+        animation: pulse 2s infinite;
+      }
+      
+      /* Particle styling */
+      .particle {
+        fill: #e02020;
+        opacity: 0;
+        animation: floatUp 6s infinite linear;
+      }
+      
+      .p1 { animation-delay: 0s; }
+      .p2 { animation-delay: 1.5s; }
+      .p3 { animation-delay: 3s; }
+      .p4 { animation-delay: 4.5s; }
+      
+      @keyframes fadeInGlow {
+        0% {
+          opacity: 0;
+          text-shadow: 0 0 0px rgba(224, 32, 32, 0);
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          text-shadow: 0 0 20px rgba(224, 32, 32, 0.6);
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes pulse {
+        0% {
+          r: 4px;
+          opacity: 1;
+        }
+        50% {
+          r: 8px;
+          opacity: 0.4;
+        }
+        100% {
+          r: 4px;
+          opacity: 1;
+        }
+      }
+      
+      @keyframes floatUp {
+        0% {
+          transform: translateY(300px) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.5;
+        }
+        90% {
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateY(-20px) translateX(30px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" class="bg-rect" rx="15" />
+  
+  <!-- Grid lines -->
+  <line x1="100" y1="0" x2="100" y2="300" class="grid-line" />
+  <line x1="200" y1="0" x2="200" y2="300" class="grid-line" />
+  <line x1="300" y1="0" x2="300" y2="300" class="grid-line" />
+  <line x1="400" y1="0" x2="400" y2="300" class="grid-line" />
+  <line x1="500" y1="0" x2="500" y2="300" class="grid-line" />
+  <line x1="600" y1="0" x2="600" y2="300" class="grid-line" />
+  <line x1="700" y1="0" x2="700" y2="300" class="grid-line" />
+  
+  <line x1="0" y1="50" x2="800" y2="50" class="grid-line" />
+  <line x1="0" y1="100" x2="800" y2="100" class="grid-line" />
+  <line x1="0" y1="150" x2="800" y2="150" class="grid-line" />
+  <line x1="0" y1="200" x2="800" y2="200" class="grid-line" />
+  <line x1="0" y1="250" x2="800" y2="250" class="grid-line" />
+
+  <!-- Particles -->
+  <circle cx="150" cy="0" r="3" class="particle p1" />
+  <circle cx="280" cy="0" r="4" class="particle p2" />
+  <circle cx="550" cy="0" r="2.5" class="particle p3" />
+  <circle cx="680" cy="0" r="3.5" class="particle p4" />
+
+  <!-- Pulse Indicator -->
+  <circle cx="400" cy="40" r="6" class="pulse-circle" />
+
+  <!-- Main Title -->
+  <text x="400" y="140" text-anchor="middle" class="title">
+    CRIME FREE <tspan class="accent-text">YUVA</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="195" text-anchor="middle" class="subtitle">
+    AWARENESS IS FREEDOM
+  </text>
+
+  <!-- Tagline -->
+  <text x="400" y="235" text-anchor="middle" class="tagline">
+    One mistake can destroy a life. But one session can save it.
+  </text>
+
+  <!-- Border -->
+  <rect x="2" y="2" width="796" height="296" fill="none" stroke="rgba(224, 32, 32, 0.35)" stroke-width="2" rx="13" />
+</svg>
